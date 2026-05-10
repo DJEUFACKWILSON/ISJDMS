@@ -1,4 +1,6 @@
 <?php
+ini_set('session.cookie_httponly', 1);
+ini_set('session.use_only_cookies', 1);
 session_start();
 include("../database.php");
 
@@ -43,8 +45,7 @@ if (isset($_GET['id'])) {
             }
         }
 
-        // 4. Delete from Database
-        $deleteStmt = $conn->prepare("SELECT id FROM documents WHERE id = ?"); // Safety check
+        // 4. Delete from Database // Safety check
         $deleteQuery = $conn->prepare("DELETE FROM documents WHERE id = ?");
         $deleteQuery->bind_param("i", $id);
 

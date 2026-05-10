@@ -1,5 +1,8 @@
 <?php
+ini_set('session.cookie_httponly', 1);
+ini_set('session.use_only_cookies', 1);
 session_start();
+require_once '../mail_config.php';
 include("../database.php");
 
 // --- 1. PHPMailer Requirements ---
@@ -83,9 +86,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_POST['send_admin_request'])
         (in_array('all', $_POST['view_roles']) ? 'all' : implode(',', $_POST['view_roles'])) : 'all';
 
     $author = mysqli_real_escape_string($conn, $_SESSION['fullname']);
-    $target_dir = "../../uploads/";
-    
-    if (!is_dir($target_dir)) { mkdir($target_dir, 0777, true); }
+
+$target_dir = $_SERVER['DOCUMENT_ROOT'] . "/uploads/";
+$db_path = "uploads/" . $file_name;
+if (!is_dir($target_dir)) { mkdir($target_dir, 0755, true); }
+
 
     $file_ext = strtolower(pathinfo($_FILES["document"]["name"], PATHINFO_EXTENSION));
     $file_name = time() . "_" . preg_replace('/[^a-zA-Z0-9]/', '_', $name) . "." . $file_ext;
@@ -106,8 +111,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_POST['send_admin_request'])
         elseif ($file_ext == 'pdf') {
             try {
                 // Pointing to: ISJDMS/php/libs/pdfparser/src/Smalot/PdfParser/
-                $lib_path = realpath(dirname(__DIR__) . '/libs/pdfparser/src/Smalot/PdfParser/');
-
+$lib_path = dirname(__DIR__) . '/libs/pdfparser/src/Smalot/PdfParser';
                 if ($lib_path && is_dir($lib_path)) {
                     // This autoloader handles all the internal sub-classes automatically
                     spl_autoload_register(function ($class) use ($lib_path) {

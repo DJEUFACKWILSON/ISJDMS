@@ -1,4 +1,6 @@
 <?php
+ini_set('session.cookie_httponly', 1);
+ini_set('session.use_only_cookies', 1);
 session_start();
 // Verify this path matches your folder structure: php/phpGangsta/
 require_once 'phpGangsta/GoogleAuthenticator.php';

@@ -1,4 +1,6 @@
 <?php
+ini_set('session.cookie_httponly', 1);
+ini_set('session.use_only_cookies', 1);
 session_start();
 // Adjust path to your phpGangsta/GoogleAuthenticator.php file
 require_once 'phpGangsta/GoogleAuthenticator.php';

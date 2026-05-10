@@ -83,6 +83,7 @@ function get_deep_folder_count($conn, $folder_id, $user_role) {
     return $total;
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -91,8 +92,8 @@ function get_deep_folder_count($conn, $folder_id, $user_role) {
     <title>ISJ Docs — Dashboard</title>
     <!-- <link rel="stylesheet" href="../css/userdashboard.css?v=1.1"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/userdashboard.css?v=1.2">
-    <link rel="stylesheet" href="../css/responsive.css">
+
+    href="/<?php echo htmlspecialchars($file['../css/userdashboard.css?v=1.2']); ?>"
 </head>
 <body>
 
@@ -310,6 +311,11 @@ function get_deep_folder_count($conn, $folder_id, $user_role) {
                                             <?php endif; ?>
                                     </tbody>
                             </table>
+
+
+
+
+                            
                             </div>
                         </div>
                         <!-- Advance search -->
@@ -558,9 +564,7 @@ function get_deep_folder_count($conn, $folder_id, $user_role) {
 <script>
 
 // If the page is reloaded (refreshed), clear the URL and go home
-    if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
-        window.location.href = "userdashboard.php"; 
-    }
+
 // 1. Keep your validation function here
 function validateSearch() {
     const inputs = document.querySelectorAll('.search-input');
@@ -710,6 +714,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 </script>
-<script src="../js/responsive.js"></script>
 </body>
 </html>

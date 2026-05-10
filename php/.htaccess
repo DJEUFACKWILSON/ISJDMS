@@ -1,0 +1,6 @@
+Options -Indexes
+ErrorDocument 404 /php/welcome.php
+<FilesMatch "\.(sql|log|env|md)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

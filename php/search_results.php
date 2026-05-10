@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
 session_start();
 include("database.php");
 
@@ -151,4 +151,4 @@ if (!$results) {
         </main>
     </div>
 </body>
-</html> -->
+</html>>

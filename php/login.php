@@ -1,4 +1,6 @@
 <?php
+ini_set('session.cookie_httponly', 1);
+ini_set('session.use_only_cookies', 1);
 session_start();
 include("database.php"); 
 
@@ -37,12 +39,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $mail->isSMTP();
                     $mail->Host       = 'smtp.gmail.com';
                     $mail->SMTPAuth   = true;
-                    $mail->Username   = 'elmine0520@gmail.com'; 
-                    $mail->Password   = 'vmqd vkuc aqer rrns'; 
+                    $mail->Username   = 'wilsondjeufack@gmail.com'; 
+                    $mail->Password   = 'bubg ohzr kwee ormc'; 
                     $mail->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
                     $mail->Port       = 587;
 
-                    $mail->setFrom('elmine0520@gmail.com', 'ISJ Docs System');
+                    $mail->setFrom('elmine0520@gmail.com', 'ISJDMS');
                     $mail->addAddress($user['email'], $fullname);
 
                     $mail->isHTML(true);

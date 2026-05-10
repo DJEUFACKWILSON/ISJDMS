@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once '../mail_config.php';
 include("../database.php");
 
 // Security check: must have come from forgot_password.php

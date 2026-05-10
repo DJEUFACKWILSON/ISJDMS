@@ -1,11 +1,13 @@
 <?php
+ini_set('session.cookie_httponly', 1);
+ini_set('session.use_only_cookies', 1);
 session_start();
 include("database.php");
 
 // 1. Load PHPMailer classes
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-
+require_once 'mail_config.php';
 require 'PHPMailer/Exception.php';
 require 'PHPMailer/PHPMailer.php';
 require 'PHPMailer/SMTP.php';
@@ -85,12 +87,12 @@ if ($role === 'staff' && $teacher_auth_code !== $OFFICIAL_STAFF_CODE) {
             $mail->isSMTP();
             $mail->Host       = 'smtp.gmail.com';
             $mail->SMTPAuth   = true;
-            $mail->Username   = 'elmine0520@gmail.com'; 
-            $mail->Password   = 'vmqd vkuc aqer rrns'; 
+            $mail->Username   = 'wilsondjeufack@gmail.com'; 
+            $mail->Password   = 'bubg ohzr kwee ormc'; 
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port       = 587;
 
-            $mail->setFrom('elmine0520@gmail.com', 'ISJ Docs System');
+            $mail->setFrom('elmine0520@gmail.com', 'ISJDMS');
             $mail->addAddress($email, $fullname);
 
             $mail->isHTML(true);

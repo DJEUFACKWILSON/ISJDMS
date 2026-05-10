@@ -1,5 +1,7 @@
 <?php
 
+ini_set('session.cookie_httponly', 1);
+ini_set('session.use_only_cookies', 1);
 session_start();
 include("database.php");
 
@@ -154,9 +156,9 @@ $docs_result = $conn->query($docs_query);
 <head>
     <meta charset="UTF-8">
     <title>ISJ Admin - Dashboard</title>
-    <link rel="stylesheet" href="../css/admindashboard.css">
+    href="../<?php echo $file['../css/admindashboard.css']; ?>"
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/responsive.css">
+    href="../<?php echo $file['../css/responsive.css']; ?>"
 </head>
 <body>
     <div class="admin-wrapper">
@@ -607,8 +609,6 @@ $docs_result = $conn->query($docs_query);
     </div>
 <script>
     // If the page is reloaded (refreshed), clear the URL and go home
-    if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
-        window.location.href = "admindashboard.php"; }
 
 </script>
 <script src="../js/responsive.js"></script>
