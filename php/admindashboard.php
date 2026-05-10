@@ -156,10 +156,11 @@ $docs_result = $conn->query($docs_query);
 <head>
     <meta charset="UTF-8">
     <title>ISJ Admin - Dashboard</title>
-    href="../<?php echo $file['../css/admindashboard.css']; ?>"
+    <link rel="stylesheet" href="../css/admindashboard.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    href="../<?php echo $file['../css/responsive.css']; ?>"
+<link rel="stylesheet" href="../css/responsive.css">
 </head>
+
 <body>
     <div class="admin-wrapper">
                 <aside class="sidebar">

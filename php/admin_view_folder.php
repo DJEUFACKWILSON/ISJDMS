@@ -30,7 +30,7 @@ $file_res = $conn->query($file_sql);
     <title><?php echo $current_folder_name; ?> — Admin View</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    href="/<?php echo htmlspecialchars($file['../css/admin_view_folder.css']); ?>"
+    <link rel="stylesheet" href="../css/admin_view_folder.css">
 </head>
 <body>
 

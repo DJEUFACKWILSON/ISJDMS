@@ -93,7 +93,7 @@ function get_deep_folder_count($conn, $folder_id, $user_role) {
     <!-- <link rel="stylesheet" href="../css/userdashboard.css?v=1.1"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    href="/<?php echo htmlspecialchars($file['../css/userdashboard.css?v=1.2']); ?>"
+    <link rel="stylesheet" href="../css/userdashboard.css?v=1.2">
 </head>
 <body>
 

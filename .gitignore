@@ -1,24 +1,5 @@
 __pycache__/
-    *.py[cod]
-    .env
-    venv/
-    .venv/
-    ```
-4.  **Save** the file and **Close** Notepad.
-
-### Step 6: Add and Commit your files
-
-Now we will tell Git to prepare all your project files for the upload.
-
-1.  Run this command to "stage" your files:
-    
-```bash
-    git add .
-    ```
-2.  Now, create your first "snapshot" of the code by running:
-    
-```bash
-    git commit -m "Initial commit of Document Management System"
-    ```
-
-**Did the terminal show a list of files being "created" or "changed"?** Let me know when you've done this, and we'll link it to the GitHub page you have open.
+*.py[cod]
+.env
+venv/
+.venv/
